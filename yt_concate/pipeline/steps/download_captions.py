@@ -15,7 +15,6 @@ import time
 
 class DownloadCaptions(Step):
     def process(self, data, inputs, utils):
-        start_time = time.time()
         for url in data:
             video_id = utils.get_video_id_from_url(url)
             if utils.check_caption_file_exists(url):
@@ -35,8 +34,6 @@ class DownloadCaptions(Step):
             except (KeyError, AttributeError):
                 print('Error when downloading', video_id)
                 continue
-        end_time = time.time()
-        print(f'took {end_time - start_time} seconds')
 
     # try:
     #     next_page_token = resp['nextPageToken']
