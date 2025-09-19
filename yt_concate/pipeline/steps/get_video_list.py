@@ -12,8 +12,6 @@ class GetVideoList(Step):
         if utils.check_video_list_file_exists(channel_id):
             print('File exists.')
             return self.read_from_file(utils.get_video_list_file_path(channel_id))
-
-        #
         else:
             print('File doesn\'t exist.')
             channel_id = inputs['channel_id']
