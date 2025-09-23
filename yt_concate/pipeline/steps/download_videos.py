@@ -14,7 +14,7 @@ class DownloadVideos(Step):
                 print('found existing video file:', video_id)
                 continue
             ydl_opts = {'skip_download': False,
-                        'format': 'bestvideo[ext=mp4][height<=1080][fps=60] + bestaudio[ext=m4a] / best[height<=1080]',
+                        'format': 'bestvideo[ext=mp4][height<=1080][fps=60] + bestaudio[ext=m4a] / best[height<=1080] + bestaudio ',
                         'merge_output_format': 'mp4',
                         'outtmpl': yt.video_files_path
                         }

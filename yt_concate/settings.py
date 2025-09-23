@@ -8,6 +8,7 @@ API_KEY = os.getenv('API_KEY')
 CHANNEL_ID = 'UCZJiDye9aqg68BfMNbFS5jw'
 
 DOWNLOADS_DIR = 'downloads'
+OUTPUTS_DIR = 'outputs'
 
 VIDEOS_DIR = os.path.join(DOWNLOADS_DIR, 'videos')
 VIDEOS_SOURCE_DIR = os.path.join(VIDEOS_DIR, CHANNEL_ID)
@@ -18,5 +19,5 @@ CAPTIONS_CONVERTED_DIR = os.path.join(CAPTIONS_SOURCE_DIR, 'converted')
 
 VIDEOS_LIST_DIR = os.path.join(DOWNLOADS_DIR, 'videos_list')  # video_list 資料夾的路徑
 
-# VIDEOS_ORIGINAL_DIR = os.path.join(VIDEOS_ID_DIR, 'original')
-# VIDEOS_TRIMMED_DIR = os.path.join(VIDEOS_ID_DIR, 'trimmed')
+
+

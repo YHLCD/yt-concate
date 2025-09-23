@@ -9,6 +9,7 @@ from yt_concate.settings import CAPTIONS_DIR
 from yt_concate.settings import VIDEOS_LIST_DIR
 from yt_concate.settings import CAPTIONS_SOURCE_DIR
 from yt_concate.settings import CAPTIONS_CONVERTED_DIR
+from yt_concate.settings import OUTPUTS_DIR
 
 
 class Utils:
@@ -23,9 +24,14 @@ class Utils:
         os.makedirs(CAPTIONS_DIR, exist_ok=True)
         os.makedirs(CAPTIONS_SOURCE_DIR, exist_ok=True)
         os.makedirs(CAPTIONS_CONVERTED_DIR, exist_ok=True)
+        os.makedirs(OUTPUTS_DIR, exist_ok=True)
 
     def get_video_list_file_path(self, channel_id):
         return os.path.join(VIDEOS_LIST_DIR, channel_id + '.txt')
+
+    def get_output_file_path(self, channel_id, search_word):
+        filename = channel_id + '_' + search_word + '.mp4'
+        return os.path.join(OUTPUTS_DIR, filename)
 
     def check_video_list_file_exists(self, channel_id):
         path = self.get_video_list_file_path(channel_id)
@@ -38,6 +44,10 @@ class Utils:
     def check_video_file_exists(self, yt):  # 還沒完成
         filepath = yt.video_files_path
         return os.path.exists(filepath) and os.path.getsize(filepath) > 0
+
+    # def check_trimmed_video_files_exists(self, yt):  # 還沒完成
+    #     filepath = yt.trimmed_video_files_path
+    #     return os.path.exists(filepath) and os.path.getsize(filepath) > 0
 
     # def convert_caption_2_txt(self,video_id, video_id_caption):
     #     with open(os.path.join(CAPTIONS_CONVERTED_DIR, video_id + '.txt'), 'w', encoding='utf-8') as f:
